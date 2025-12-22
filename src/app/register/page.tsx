@@ -384,27 +384,33 @@ export default function RegisterPage() {
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <label className="flex flex-col gap-2">
                   <span className="text-sm font-medium text-slate-700">
-                    เบอร์โทรศัพท์
+                    เบอร์โทรศัพท์ <span className="text-red-500">*</span>
                   </span>
                   <input
                     className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm outline-none transition focus:border-[rgb(59_130_246)] focus:ring-2 focus:ring-[rgb(59_130_246/0.2)]"
                     value={form.phoneNumber}
                     onChange={handleChange("phoneNumber")}
+                    placeholder="เช่น 0812345678"
                     required
                     inputMode="numeric"
+                    maxLength={10}
                   />
+                  <span className="text-xs text-slate-500">กรอกเบอร์โทรศัพท์ 9-10 หลัก (ไม่ต้องใส่ขีด) เช่น 0812345678</span>
                 </label>
                 <label className="flex flex-col gap-2">
                   <span className="text-sm font-medium text-slate-700">
-                    อีเมล
+                    อีเมล <span className="text-red-500">*</span>
                   </span>
                   <input
                     type="email"
                     className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm outline-none transition focus:border-[rgb(59_130_246)] focus:ring-2 focus:ring-[rgb(59_130_246/0.2)]"
                     value={form.email}
                     onChange={handleChange("email")}
+                    placeholder="เช่น example@email.com"
                     required
+                    maxLength={255}
                   />
+                  <span className="text-xs text-slate-500">กรอกอีเมลที่ใช้งานได้จริง ใช้สำหรับการติดต่อและกู้คืนบัญชี</span>
                 </label>
               </div>
             </section>
@@ -512,9 +518,11 @@ export default function RegisterPage() {
                     className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm outline-none transition focus:border-[rgb(59_130_246)] focus:ring-2 focus:ring-[rgb(59_130_246/0.2)]"
                     value={form.password}
                     onChange={handleChange("password")}
+                    placeholder="กรอกรหัสผ่านอย่างน้อย 8 ตัวอักษร"
                     required
                     minLength={8}
                   />
+                  <span className="text-xs text-slate-500">รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร แนะนำให้ใช้ตัวอักษร ตัวเลข และอักขระพิเศษผสมกัน</span>
                 </label>
                 <label className="flex flex-col gap-2">
                   <span className="text-sm font-medium text-slate-700">
